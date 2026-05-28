@@ -364,6 +364,53 @@
   .home-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 }
 
+/* ════════════════ Component Tabs ════════════════ */
+.component-tabs {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.component-tabs-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.component-tabs-scroll::-webkit-scrollbar { display: none; }
+
+.component-tab {
+  flex-shrink: 0;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94A3B8;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.component-tab:hover { background: #334155; color: #E2E8F0; }
+.component-tab.active {
+  background: #3B82F6;
+  border-color: #3B82F6;
+  color: #fff;
+  font-weight: 500;
+}
+
+.component-tab-count {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: inherit;
+}
+
 /* ════════════════ Content Header ════════════════ */
 .content-area { max-width: 960px; }
 
