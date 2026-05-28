@@ -1,5 +1,6 @@
 import { useT, useLanguage } from '../LanguageContext';
 import { UI } from '../i18n';
+import MarketShareChart from './MarketShareChart';
 import type { TreeNode, Supplier, LocalizedString } from '../types';
 
 interface SupplierPanelProps {
@@ -56,6 +57,9 @@ export default function SupplierPanel({ node, onSelectSupplier }: SupplierPanelP
           {UI.total[lang]} <strong>{node.suppliers.length}</strong> {UI.supplierCount[lang]}
           {node.cr3 && <span> · CR3: {node.cr3}</span>}
         </div>
+      </div>
+      <div className="panel-chart-area">
+        <MarketShareChart suppliers={node.suppliers} />
       </div>
       <div className="supplier-grid">
         {node.suppliers.map((s) => (
