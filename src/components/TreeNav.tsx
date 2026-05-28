@@ -5,7 +5,11 @@ import { UI } from '../i18n';
 import { treeData } from '../data';
 import type { TreeNode } from '../types';
 
-export default function TreeNav() {
+interface TreeNavProps {
+  onClose?: () => void;
+}
+
+export default function TreeNav({ onClose }: TreeNavProps) {
   const { t } = useT();
   const { lang } = useLanguage();
   const navigate = useNavigate();
@@ -27,6 +31,7 @@ export default function TreeNav() {
 
   const handleSelect = (child: TreeNode, parentId: string) => {
     navigate(`/browse/${parentId}?component=${child.id}`);
+    onClose?.();
   };
 
   return (

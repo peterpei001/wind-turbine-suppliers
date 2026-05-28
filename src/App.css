@@ -725,17 +725,103 @@
   text-align: center;
 }
 
-/* Responsive */
+/* ════════════════ Sidebar Wrapper & Overlay ════════════════ */
+.sidebar { display: contents; }
+.sidebar-overlay { display: none; }
+.menu-btn { display: none; }
+
+/* ════════════════ Responsive ════════════════ */
 @media (max-width: 768px) {
+  /* ── Sidebar ── */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 200;
+    transition: left 0.25s ease;
+    display: block;
+  }
+  .sidebar.open { left: 0; }
+
+  .sidebar .tree-nav {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border-right: none;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 199;
+  }
+  .sidebar-overlay.open { display: block; }
+
+  /* ── Menu button ── */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #3B82F6;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 150;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+    transition: background 0.15s;
+  }
+  .menu-btn:hover { background: #2563EB; }
+
+  /* ── Header ── */
+  .header { padding: 0 12px; }
+  .title { font-size: 14px; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .stat-chip { display: none; }
+  .search-wrapper { max-width: none; margin: 0 8px; }
+
+  /* ── Main content ── */
+  .main { padding: 12px; }
+
+  /* ── Supplier grid — single column ── */
+  .supplier-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* ── Content header ── */
+  .content-header { flex-direction: column; gap: 6px; align-items: flex-start; }
+  .content-header h2 { font-size: 18px; }
+
+  /* ── Detail page ── */
   .detail-hero {
     flex-direction: column;
     gap: 16px;
+    padding: 18px;
   }
   .detail-hero-right {
     width: 100%;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  .detail-body {
-    grid-template-columns: 1fr;
+  .detail-metric-big {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 14px;
   }
+  .detail-company-name { font-size: 20px; }
+  .detail-body { grid-template-columns: 1fr; }
+
+  /* ── Cards ── */
+  .card-metrics { flex-direction: column; gap: 8px; }
+
+  /* ── Empty state ── */
+  .content-empty h2 { font-size: 18px; }
+  .content-empty-icon { font-size: 40px; }
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import { UI } from './i18n';
@@ -47,11 +48,19 @@ function Header() {
 }
 
 function AppInner() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div className="app">
       <Header />
       <div className="body">
-        <TreeNav />
+        <div className={`sidebar-overlay ${sidebarOpen ? 'open' : ''}`} onClick={() => setSidebarOpen(false)} />
+        <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+          <TreeNav onClose={() => setSidebarOpen(false)} />
+        </div>
+        <button className="menu-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
+          {sidebarOpen ? '✕' : '☰'}
+        </button>
         <main className="main">
           <Routes>
             <Route path="/" element={<HomePage />} />
