@@ -40,6 +40,10 @@ export default function TreeNav({ onClose }: TreeNavProps) {
     <nav className="tree-nav">
       <div className="tree-header">{UI.navTitle[lang]}</div>
       <div className="tree-scroll">
+        <div className="tree-system-head" onClick={goOem} style={{ paddingLeft: 10, marginBottom: 4 }}>
+          <span className="tree-system-name" style={{ color: '#F1F5F9', fontSize: 14 }}>🏭 {UI.oemNav[lang]}</span>
+        </div>
+        <div className="tree-sep" />
         {treeData.children?.map((system) => (
           <div key={system.id} className="tree-system">
             <div
@@ -65,11 +69,6 @@ export default function TreeNav({ onClose }: TreeNavProps) {
             ))}
           </div>
         ))}
-        <div className="tree-sep" />
-        <div className="tree-system-head" onClick={goOem} style={{ paddingLeft: 10 }}>
-          <span className="tree-arrow" style={{ visibility: 'hidden' }}>▶</span>
-          <span className="tree-system-name" style={{ color: '#F1F5F9' }}>{UI.oemNav[lang]}</span>
-        </div>
       </div>
     </nav>
   );
