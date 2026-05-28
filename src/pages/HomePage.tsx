@@ -4,9 +4,9 @@ import { UI } from '../i18n';
 import { treeData } from '../data';
 
 const systemIcons: Record<string, string> = {
-  'sys-blade': '🌀', 'sys-pitch': '⚙️', 'sys-hub': '🔗', 'sys-drivetrain': '🔧',
-  'sys-generator': '🔋', 'sys-yaw': '🔄', 'sys-brake': '🛑', 'sys-converter': '📡',
-  'sys-electrical': '⚡', 'sys-control': '🧠', 'sys-cms': '📊', 'sys-hydraulic': '💧',
+  'sys-blade': '🌀', 'sys-pitch': '⚙️', 'sys-hub': '🛞', 'sys-drivetrain': '🔧',
+  'sys-generator': '⚡', 'sys-yaw': '🔄', 'sys-brake': '🛑', 'sys-converter': '🔌',
+  'sys-electrical': '💡', 'sys-control': '🧠', 'sys-cms': '📊', 'sys-hydraulic': '💧',
   'sys-cooling': '❄️', 'sys-structure': '🏗️', 'sys-foundation': '🏠',
 };
 
