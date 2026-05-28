@@ -973,6 +973,7 @@
     height: 100%;
     border-right: none;
   }
+  .sidebar .tree-scroll { padding-bottom: 80px; }
 
   .sidebar-overlay {
     display: none;
