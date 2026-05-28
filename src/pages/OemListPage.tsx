@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import { useT, useLanguage } from '../LanguageContext';
+import { useLN } from '../useLangNavigate';
 import { UI } from '../i18n';
 import { oemData } from '../data/oem-data';
 import { deriveOemSupplierCount } from '../data/oem-derive';
@@ -7,7 +7,7 @@ import { deriveOemSupplierCount } from '../data/oem-derive';
 export default function OemListPage() {
   const { t } = useT();
   const { lang } = useLanguage();
-  const navigate = useNavigate();
+  const ln = useLN();
 
   const domestic = oemData.filter((o) => o.tier === 'domestic-top' || o.tier === 'domestic');
   const intl = oemData.filter((o) => o.tier === 'international');
@@ -40,7 +40,7 @@ export default function OemListPage() {
       </h3>
       <div className="home-grid">
         {domestic.map((oem) => (
-          <div key={oem.id} className="oem-card" onClick={() => navigate(`/oem/${oem.id}`)}>
+          <div key={oem.id} className="oem-card" onClick={() => ln(`/oem/${oem.id}`)}>
             <div className="oem-card-rank">#{oem.rank}</div>
             <div className="oem-card-name">{t(oem.name)}</div>
             <div className="oem-card-share">{t(oem.marketShare)}</div>
@@ -54,7 +54,7 @@ export default function OemListPage() {
       </h3>
       <div className="home-grid">
         {intl.map((oem) => (
-          <div key={oem.id} className="oem-card intl" onClick={() => navigate(`/oem/${oem.id}`)}>
+          <div key={oem.id} className="oem-card intl" onClick={() => ln(`/oem/${oem.id}`)}>
             <div className="oem-card-rank">🌍</div>
             <div className="oem-card-name">{t(oem.name)}</div>
             <div className="oem-card-share">{t(oem.marketShare)}</div>

@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import { useT, useLanguage } from '../LanguageContext';
+import { useLN } from '../useLangNavigate';
 import { UI } from '../i18n';
 import { treeData } from '../data';
 
@@ -13,7 +13,7 @@ const systemIcons: Record<string, string> = {
 export default function HomePage() {
   const { lang } = useLanguage();
   const { t } = useT();
-  const navigate = useNavigate();
+  const ln = useLN();
 
   const sysCount = treeData.children?.length || 0;
   let compCount = 0;
@@ -50,7 +50,7 @@ export default function HomePage() {
       </div>
       <div className="home-grid">
         {(treeData.children || []).map((sys) => (
-          <div key={sys.id} className="home-card" onClick={() => navigate(`/browse/${sys.id}`)}>
+          <div key={sys.id} className="home-card" onClick={() => ln(`/browse/${sys.id}`)}>
             <div className="home-card-icon">{systemIcons[sys.id] || '📦'}</div>
             <div className="home-card-info">
               <div className="home-card-name">{t(sys.name)}</div>

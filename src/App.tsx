@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import { UI } from './i18n';
 import TreeNav from './components/TreeNav';
@@ -28,8 +28,16 @@ function countAll(): { systems: number; components: number; suppliers: number } 
 }
 
 function Header() {
-  const { lang, toggleLang } = useLanguage();
+  const { lang } = useLanguage();
   const counts = countAll();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const toggleLang = () => {
+    const newLang = lang === 'zh' ? 'en' : 'zh';
+    const path = location.pathname.replace(/^\/(zh|en)/, `/${newLang}`);
+    navigate(path);
+  };
 
   return (
     <header className="header">
@@ -51,6 +59,18 @@ function Header() {
   );
 }
 
+/** Reads :lang from URL and sets it in context */
+function LangGate({ children }: { children: React.ReactNode }) {
+  const { lang: paramsLang } = useParams();
+  const { setLang } = useLanguage();
+
+  useEffect(() => {
+    if (paramsLang === 'zh' || paramsLang === 'en') setLang(paramsLang);
+  }, [paramsLang, setLang]);
+
+  return <>{children}</>;
+}
+
 function AppInner() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -67,13 +87,14 @@ function AppInner() {
         </button>
         <main className="main">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/browse" element={<BrowsePage />} />
-            <Route path="/browse/:systemId" element={<BrowsePage />} />
-            <Route path="/detail/:supplierId" element={<DetailPage />} />
-            <Route path="/oems" element={<OemListPage />} />
-            <Route path="/oem/:oemId" element={<OemDetailPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/:lang" element={<LangGate><HomePage /></LangGate>} />
+            <Route path="/:lang/browse" element={<LangGate><BrowsePage /></LangGate>} />
+            <Route path="/:lang/browse/:systemId" element={<LangGate><BrowsePage /></LangGate>} />
+            <Route path="/:lang/detail/:supplierId" element={<LangGate><DetailPage /></LangGate>} />
+            <Route path="/:lang/oems" element={<LangGate><OemListPage /></LangGate>} />
+            <Route path="/:lang/oem/:oemId" element={<LangGate><OemDetailPage /></LangGate>} />
+            <Route path="/" element={<Navigate to="/zh/" replace />} />
+            <Route path="*" element={<Navigate to="/zh/" replace />} />
           </Routes>
         </main>
       </div>

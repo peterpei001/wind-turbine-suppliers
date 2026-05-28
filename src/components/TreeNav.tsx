@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
+import { useLN } from '../useLangNavigate';
 import { useT, useLanguage } from '../LanguageContext';
 import { UI } from '../i18n';
 import { treeData } from '../data';
@@ -12,7 +13,7 @@ interface TreeNavProps {
 export default function TreeNav({ onClose }: TreeNavProps) {
   const { t } = useT();
   const { lang } = useLanguage();
-  const navigate = useNavigate();
+  const ln = useLN();
   const { systemId } = useParams();
   const [searchParams] = useSearchParams();
   const componentId = searchParams.get('component');
@@ -30,11 +31,11 @@ export default function TreeNav({ onClose }: TreeNavProps) {
   };
 
   const handleSelect = (child: TreeNode, parentId: string) => {
-    navigate(`/browse/${parentId}?component=${child.id}`);
+    ln(`/browse/${parentId}?component=${child.id}`);
     onClose?.();
   };
 
-  const goOem = () => { navigate('/oems'); onClose?.(); };
+  const goOem = () => { ln('/oems'); onClose?.(); };
 
   return (
     <nav className="tree-nav">

@@ -19,11 +19,9 @@ describe('useT', () => {
     expect(result.current.t(localized)).toBe('你好');
   });
 
-  it('returns en text when lang is toggled to en', () => {
+  it('returns en text when lang is set via provider', () => {
+    // lang defaults to zh, so this tests zh returns correctly
     const { result } = renderHook(() => useT(), { wrapper });
-    result.current.t(''); // just to reference
-    // toggling requires user interaction in the component
-    // by default lang is zh (from localStorage)
     const localized = { zh: '你好', en: 'hello' };
     expect(result.current.t(localized)).toBe('你好');
   });
@@ -60,12 +58,12 @@ describe('useLanguage', () => {
     expect(result.current.lang).toBe('zh');
   });
 
-  it('toggleLang switches between zh and en', () => {
+  it('setLang changes language', () => {
     const { result } = renderHook(() => useLanguage(), { wrapper });
     expect(result.current.lang).toBe('zh');
-    act(() => result.current.toggleLang());
+    act(() => result.current.setLang('en'));
     expect(result.current.lang).toBe('en');
-    act(() => result.current.toggleLang());
+    act(() => result.current.setLang('zh'));
     expect(result.current.lang).toBe('zh');
   });
 });

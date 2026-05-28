@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useLN } from '../useLangNavigate';
 import { useLanguage } from '../LanguageContext';
 import SupplierDetail from '../components/SupplierDetail';
 import { treeData } from '../data';
@@ -7,6 +8,7 @@ import type { TreeNode, Supplier } from '../types';
 export default function DetailPage() {
   const { supplierId } = useParams();
   const navigate = useNavigate();
+  const ln = useLN();
   const { lang } = useLanguage();
 
   const result = findSupplier(treeData, supplierId || '', lang);
@@ -14,7 +16,7 @@ export default function DetailPage() {
     return (
       <div className="content-empty">
         <p>Supplier not found</p>
-        <button onClick={() => navigate('/browse')} className="detail-back" style={{ marginTop: 16 }}>
+        <button onClick={() => ln('/browse')} className="detail-back" style={{ marginTop: 16 }}>
           ← Back
         </button>
       </div>

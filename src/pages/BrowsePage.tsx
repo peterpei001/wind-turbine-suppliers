@@ -1,5 +1,6 @@
-import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useT } from '../LanguageContext';
+import { useLN } from '../useLangNavigate';
 import SupplierPanel from '../components/SupplierPanel';
 import { treeData } from '../data';
 import type { TreeNode } from '../types';
@@ -7,7 +8,7 @@ import type { TreeNode } from '../types';
 export default function BrowsePage() {
   const { systemId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const ln = useLN();
   const { t } = useT();
   const componentId = searchParams.get('component');
 
@@ -66,7 +67,7 @@ export default function BrowsePage() {
       </div>
       <SupplierPanel
         node={currentNode}
-        onSelectSupplier={(s) => navigate(`/detail/${s.id}`)}
+        onSelectSupplier={(s) => ln(`/detail/${s.id}`)}
       />
     </div>
   );

@@ -1,26 +1,18 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 import type { LocalizedString } from './types';
 
 interface LanguageContextValue {
   lang: 'zh' | 'en';
-  toggleLang: () => void;
+  setLang: (l: 'zh' | 'en') => void;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<'zh' | 'en'>(() => {
-    return (localStorage.getItem('lang') as 'zh' | 'en') || 'zh';
-  });
-
-  useEffect(() => {
-    localStorage.setItem('lang', lang);
-  }, [lang]);
-
-  const toggleLang = () => setLang((l) => (l === 'zh' ? 'en' : 'zh'));
+  const [lang, setLang] = useState<'zh' | 'en'>('zh');
 
   return (
-    <LanguageContext.Provider value={{ lang, toggleLang }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );

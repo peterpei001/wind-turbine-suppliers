@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLN } from '../useLangNavigate';
 import { useT, useLanguage } from '../LanguageContext';
 import { UI } from '../i18n';
 import { treeData } from '../data';
@@ -53,7 +53,7 @@ export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [focused, setFocused] = useState(false);
-  const navigate = useNavigate();
+  const ln = useLN();
   const { lang } = useLanguage();
   const { t } = useT();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -87,7 +87,7 @@ export default function SearchBar() {
     setQuery('');
     setResults([]);
     setFocused(false);
-    navigate(`/detail/${supplierId}`);
+    ln(`/detail/${supplierId}`);
   };
 
   return (

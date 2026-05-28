@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useLN } from '../useLangNavigate';
 import { useT, useLanguage } from '../LanguageContext';
 import { UI } from '../i18n';
 import { oemData } from '../data/oem-data';
@@ -7,7 +8,7 @@ import { deriveOemSuppliers } from '../data/oem-derive';
 
 export default function OemDetailPage() {
   const { oemId } = useParams();
-  const navigate = useNavigate();
+  const ln = useLN();
   const { t } = useT();
   const { lang } = useLanguage();
 
@@ -17,7 +18,7 @@ export default function OemDetailPage() {
     return (
       <div className="content-empty">
         <p>{UI.noData[lang]}</p>
-        <button className="detail-back" style={{ marginTop: 16 }} onClick={() => navigate('/oems')}>
+        <button className="detail-back" style={{ marginTop: 16 }} onClick={() => ln('/oems')}>
           {UI.back[lang]}
         </button>
       </div>
@@ -43,7 +44,7 @@ export default function OemDetailPage() {
   return (
     <div className="detail-page">
       <div className="detail-topbar">
-        <button className="detail-back" onClick={() => navigate('/oems')}>{UI.back[lang]}</button>
+        <button className="detail-back" onClick={() => ln('/oems')}>{UI.back[lang]}</button>
         <span className="detail-breadcrumb">{UI.oemTitle[lang]} / {t(oem.name)}</span>
       </div>
 
@@ -105,7 +106,7 @@ export default function OemDetailPage() {
                         key={link.supplier.id}
                         className="dchip prime"
                         style={{ cursor: 'pointer' }}
-                        onClick={() => navigate(`/detail/${link.supplier.id}`)}
+                        onClick={() => ln(`/detail/${link.supplier.id}`)}
                       >
                         {t(link.supplier.name)}
                       </span>
