@@ -13,7 +13,6 @@ import { cmsSystem } from './system-11-cms';
 import { hydraulicSystem } from './system-12-hydraulic';
 import { coolingSystem } from './system-13-cooling';
 import { structureSystem } from './system-14-structure';
-import { fastenerSystem } from './system-15-fastener';
 import { foundationSystem } from './system-16-foundation';
 
 export const treeData: TreeNode = {
@@ -35,7 +34,6 @@ export const treeData: TreeNode = {
     hydraulicSystem,
     coolingSystem,
     structureSystem,
-    fastenerSystem,
     foundationSystem,
   ],
 };

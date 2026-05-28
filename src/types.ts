@@ -43,3 +43,32 @@ export interface TreeNode {
   topSupplier?: string | LocalizedString;
   cr3?: string;
 }
+
+export interface Oem {
+  id: string;
+  name: LocalizedString;
+  rank: number;
+  marketShare: string | LocalizedString;
+  globalShare?: string | LocalizedString;
+  revenue?: string | LocalizedString;
+  annualInstall?: string | LocalizedString;
+  annualUnits?: string;
+  headquarters: LocalizedString;
+  established: LocalizedString;
+  globalCumulative?: string | LocalizedString;
+  description: LocalizedString;
+  website?: string;
+  platformRange?: string;
+  tier: 'domestic-top' | 'domestic' | 'international';
+  orderBacklog?: string | LocalizedString;
+  offshoreShare?: string | LocalizedString;
+  exportRevenue?: string | LocalizedString;
+}
+
+export interface OemSupplierLink {
+  supplier: Supplier;
+  componentId: string;
+  componentName: LocalizedString;
+  systemId: string;
+  systemName: LocalizedString;
+}

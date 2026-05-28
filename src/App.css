@@ -220,6 +220,36 @@
 .tree-scroll::-webkit-scrollbar-track { background: transparent; }
 .tree-scroll::-webkit-scrollbar-thumb { background: #475569; border-radius: 2px; }
 
+.tree-sep {
+  height: 1px;
+  background: #334155;
+  margin: 8px 12px;
+}
+
+/* ════════════════ OEM Cards ════════════════ */
+.oem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: linear-gradient(135deg, #1E293B 0%, #1a2235 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.oem-card:hover {
+  border-color: #3B82F6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59,130,246,0.1);
+}
+.oem-card.intl:hover { border-color: #8B5CF6; box-shadow: 0 6px 20px rgba(139,92,246,0.1); }
+
+.oem-card-rank { font-size: 12px; color: #64748B; font-weight: 600; }
+.oem-card-name { font-size: 16px; font-weight: 700; color: #F1F5F9; }
+.oem-card-share { font-size: 13px; color: #22C55E; font-weight: 600; }
+.oem-card-subs { font-size: 11px; color: #64748B; }
+
 /* ════════════════ Main Content ════════════════ */
 .main {
   flex: 1;

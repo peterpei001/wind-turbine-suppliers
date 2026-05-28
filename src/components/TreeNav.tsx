@@ -34,6 +34,8 @@ export default function TreeNav({ onClose }: TreeNavProps) {
     onClose?.();
   };
 
+  const goOem = () => { navigate('/oems'); onClose?.(); };
+
   return (
     <nav className="tree-nav">
       <div className="tree-header">{UI.navTitle[lang]}</div>
@@ -63,6 +65,11 @@ export default function TreeNav({ onClose }: TreeNavProps) {
             ))}
           </div>
         ))}
+        <div className="tree-sep" />
+        <div className="tree-system-head" onClick={goOem} style={{ paddingLeft: 10 }}>
+          <span className="tree-arrow" style={{ visibility: 'hidden' }}>▶</span>
+          <span className="tree-system-name" style={{ color: '#F1F5F9' }}>{UI.oemNav[lang]}</span>
+        </div>
       </div>
     </nav>
   );

@@ -7,7 +7,10 @@ import SearchBar from './components/SearchBar';
 import HomePage from './pages/HomePage';
 import BrowsePage from './pages/BrowsePage';
 import DetailPage from './pages/DetailPage';
+import OemListPage from './pages/OemListPage';
+import OemDetailPage from './pages/OemDetailPage';
 import { treeData } from './data';
+import { oemData } from './data/oem-data';
 import './App.css';
 
 function countAll(): { systems: number; components: number; suppliers: number } {
@@ -39,6 +42,7 @@ function Header() {
         <span className="stat-chip">{counts.systems} {UI.systems[lang]}</span>
         <span className="stat-chip">{counts.components} {UI.components[lang]}</span>
         <span className="stat-chip">{counts.suppliers} {UI.suppliers[lang]}</span>
+        <span className="stat-chip">{oemData.length} {UI.oemCount[lang]}</span>
         <button className="lang-toggle" onClick={toggleLang}>
           {UI.langSwitch[lang]}
         </button>
@@ -67,6 +71,8 @@ function AppInner() {
             <Route path="/browse" element={<BrowsePage />} />
             <Route path="/browse/:systemId" element={<BrowsePage />} />
             <Route path="/detail/:supplierId" element={<DetailPage />} />
+            <Route path="/oems" element={<OemListPage />} />
+            <Route path="/oem/:oemId" element={<OemDetailPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
