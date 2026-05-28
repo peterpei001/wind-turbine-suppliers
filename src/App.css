@@ -1013,7 +1013,7 @@
   .search-wrapper { max-width: none; margin: 0 8px; }
 
   /* ── Main content ── */
-  .main { padding: 12px; }
+  .main { padding: 12px 12px 80px; }
 
   /* ── Supplier grid — single column ── */
   .supplier-grid { grid-template-columns: 1fr; gap: 12px; }
