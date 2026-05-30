@@ -79,6 +79,11 @@ export const UI: Record<string, LocalizedString> = {
     en: 'Our team updates the supplier map information weekly to ensure data timeliness and accuracy.',
   },
   aboutDisclaimerTitle: { zh: '内容声明', en: 'Disclaimer' },
+  contactEmail: { zh: '邮箱', en: 'Email' },
+  contactDesc: {
+    zh: '如果您对我们的供应商图谱有任何疑问、建议或合作意向，欢迎通过以下方式与我们联系。',
+    en: 'If you have any questions, suggestions, or collaboration inquiries regarding our supplier map, feel free to reach out to us.',
+  },
   aboutDisclaimer: {
     zh: '我们的供应商图谱数据均来自于公开信息以及我们对供应商的专业调研。如有供应商对其中内容存在异议，欢迎发送邮件至 info@bigwingstech.com 与我们联系，我们将及时核实并处理。',
     en: 'Our supplier map data is sourced from public information and our professional research on suppliers. If any supplier has concerns about the content, please email us at info@bigwingstech.com. We will verify and address them promptly.',

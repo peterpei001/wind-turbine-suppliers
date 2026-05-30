@@ -11,6 +11,7 @@ import DetailPage from './pages/DetailPage';
 import OemListPage from './pages/OemListPage';
 import OemDetailPage from './pages/OemDetailPage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import { treeData } from './data';
 import { oemData } from './data/oem-data';
 import './App.css';
@@ -81,17 +82,15 @@ function Footer() {
     <footer className="footer">
       <hr className="footer-hr" />
       <div className="footer-inner">
-        <button className="footer-link" onClick={() => ln('/about')}>
-          {UI.aboutUs[lang]}
-          <span className="footer-arrow">▸</span>
-        </button>
-        <div className="footer-right">
-          <div className="footer-contact">
-            <span className="footer-contact-label">{UI.contactUs[lang]}</span>
-            <a href="mailto:info@bigwingstech.com" className="footer-email">info@bigwingstech.com</a>
-          </div>
-          <p className="footer-copy">{UI.emptyTitle[lang]} &copy; {new Date().getFullYear()}</p>
+        <div className="footer-links">
+          <button className="footer-link" onClick={() => ln('/about')}>
+            {UI.aboutUs[lang]}
+          </button>
+          <button className="footer-link" onClick={() => ln('/contact')}>
+            {UI.contactUs[lang]}
+          </button>
         </div>
+        <p className="footer-copy">{UI.emptyTitle[lang]} &copy; {new Date().getFullYear()}</p>
       </div>
     </footer>
   );
@@ -120,6 +119,7 @@ function AppInner() {
             <Route path="/:lang/oems" element={<LangGate><OemListPage /></LangGate>} />
             <Route path="/:lang/oem/:oemId" element={<LangGate><OemDetailPage /></LangGate>} />
             <Route path="/:lang/about" element={<LangGate><AboutPage /></LangGate>} />
+            <Route path="/:lang/contact" element={<LangGate><ContactPage /></LangGate>} />
             <Route path="/" element={<Navigate to="/zh/" replace />} />
             <Route path="*" element={<Navigate to="/zh/" replace />} />
           </Routes>
