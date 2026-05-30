@@ -85,7 +85,10 @@ function Footer() {
           {UI.aboutUs[lang]}
           <span className="footer-arrow">▸</span>
         </button>
-        <p className="footer-copy">{UI.emptyTitle[lang]} &copy; {new Date().getFullYear()}</p>
+        <div className="footer-right">
+          <a href="mailto:info@bigwingstech.com" className="footer-email">info@bigwingstech.com</a>
+          <p className="footer-copy">{UI.emptyTitle[lang]} &copy; {new Date().getFullYear()}</p>
+        </div>
       </div>
     </footer>
   );

@@ -975,6 +975,23 @@
   align-items: center;
 }
 
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-email {
+  font-size: 12px;
+  color: #64748B;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-email:hover {
+  color: #60A5FA;
+  text-decoration: underline;
+}
+
 .footer-link {
   display: inline-flex;
   align-items: center;
