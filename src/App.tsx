@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import { UI } from './i18n';
+import { UI, STRENGTHS } from './i18n';
 import TreeNav from './components/TreeNav';
 import SearchBar from './components/SearchBar';
 import HomePage from './pages/HomePage';
@@ -71,6 +71,36 @@ function LangGate({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+function Footer() {
+  const { lang } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <footer className="footer">
+      <hr className="footer-hr" />
+      <div className="footer-inner">
+        <button className="footer-toggle" onClick={() => setExpanded(!expanded)}>
+          {UI.aboutUs[lang]}
+          <span className={`footer-arrow ${expanded ? 'open' : ''}`}>▸</span>
+        </button>
+        {expanded && (
+          <div className="footer-content">
+            <p className="footer-text">{UI.aboutDesc[lang]}</p>
+            <p className="footer-text">{UI.aboutDesc2[lang]}</p>
+            <p className="footer-text">{UI.aboutDesc3[lang]}</p>
+            <h4 className="footer-strength-title">{UI.aboutStrengthTitle[lang]}</h4>
+            <ul className="footer-strength-list">
+              {STRENGTHS[lang].map((s, i) => (
+                <li key={i} className="footer-strength-item">{s}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </footer>
+  );
+}
+
 function AppInner() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -98,6 +128,7 @@ function AppInner() {
           </Routes>
         </main>
       </div>
+      <Footer />
     </div>
   );
 }

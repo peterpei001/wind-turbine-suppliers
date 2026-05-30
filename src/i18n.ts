@@ -58,4 +58,33 @@ export const UI: Record<string, LocalizedString> = {
   oemSupplierCount: { zh: '家供应商配套', en: 'suppliers' },
   oemSupplierBySystem: { zh: '供应商按系统分类', en: 'Suppliers by System' },
   oemNoData: { zh: '暂无配套供应商数据', en: 'No supplier data available' },
+  aboutUs: { zh: '关于我们', en: 'About Us' },
+  aboutDesc: {
+    zh: '我们是一支深耕中国风电供应链的专业团队。团队成员来自中国风电零部件制造企业的不同岗位，拥有叶片设计、齿轮箱制造、发电机系统、偏航变桨控制、塔筒制造、变流器工程等领域的多年实战经验。',
+    en: 'We are a professional team deeply dedicated to the Chinese wind turbine supply chain. Our members come from diverse backgrounds across the wind energy industry, with hands-on experience in various positions at leading Chinese wind turbine component manufacturers.',
+  },
+  aboutDesc2: {
+    zh: '我们熟悉风电零部件的全生命周期——从概念设计、样机验证到批量生产和售后服务。团队成员曾在国内头部供应商从事采购、质量管控、生产管理、研发及供应链物流等岗位，对中国风电行业的标准、技术演进和供应链格局有着一线的认知与洞察。',
+    en: 'Drawing on years of accumulated expertise in turbine blade design, gearbox manufacturing, generator systems, pitch and yaw control, tower fabrication, and power converter engineering, we understand the full lifecycle of wind turbine components — from concept and prototyping through mass production and aftermarket service.',
+  },
+  aboutDesc3: {
+    zh: '我们的使命是将这些经验与全球合作伙伴对接，提供可靠的采购咨询、技术支持和质量控制服务，助力全球清洁能源转型。',
+    en: 'Our mission is to bridge this expertise with global partners, delivering reliable sourcing, technical consulting, and quality-focused solutions that help drive the world’s transition to clean energy.',
+  },
+  aboutStrengthTitle: { zh: '我们的优势', en: 'Our Strengths' },
+};
+
+export const STRENGTHS: Record<'zh' | 'en', string[]> = {
+  zh: [
+    '覆盖风电零部件全品类的深度行业知识',
+    '中国制造工厂的质量管控与生产实战经验',
+    '遍及中国风电供应链的优质供应商网络',
+    '对技术卓越与供应链透明度的坚定承诺',
+  ],
+  en: [
+    'Deep domain knowledge across the full wind turbine component spectrum',
+    'Practical experience in quality control and production at Chinese manufacturing facilities',
+    'Strong supplier network relationships throughout China’s wind power supply chain',
+    'Commitment to technical excellence and supply chain transparency',
+  ],
 };
