@@ -83,6 +83,9 @@ function Footer() {
       <hr className="footer-hr" />
       <div className="footer-inner">
         <div className="footer-links">
+          <button className="footer-link" onClick={() => ln('/')}>
+            {UI.homeNav[lang]}
+          </button>
           <button className="footer-link" onClick={() => ln('/about')}>
             {UI.aboutUs[lang]}
           </button>

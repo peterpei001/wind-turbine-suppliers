@@ -59,6 +59,7 @@ export const UI: Record<string, LocalizedString> = {
   oemSupplierBySystem: { zh: '供应商按系统分类', en: 'Suppliers by System' },
   oemNoData: { zh: '暂无配套供应商数据', en: 'No supplier data available' },
   aboutUs: { zh: '关于我们', en: 'About Us' },
+  homeNav: { zh: '首页', en: 'Home' },
   contactUs: { zh: '联系我们', en: 'Contact Us' },
   aboutDesc: {
     zh: '我们是一支深耕中国风电供应链的专业团队。团队成员来自中国风电零部件制造企业的不同岗位，拥有叶片设计、齿轮箱制造、发电机系统、偏航变桨控制、塔筒制造、变流器工程等领域的多年实战经验。',
