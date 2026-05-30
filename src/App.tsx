@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import { UI, STRENGTHS } from './i18n';
+import { useLN } from './useLangNavigate';
+import { UI } from './i18n';
 import TreeNav from './components/TreeNav';
 import SearchBar from './components/SearchBar';
 import HomePage from './pages/HomePage';
@@ -9,6 +10,7 @@ import BrowsePage from './pages/BrowsePage';
 import DetailPage from './pages/DetailPage';
 import OemListPage from './pages/OemListPage';
 import OemDetailPage from './pages/OemDetailPage';
+import AboutPage from './pages/AboutPage';
 import { treeData } from './data';
 import { oemData } from './data/oem-data';
 import './App.css';
@@ -73,29 +75,17 @@ function LangGate({ children }: { children: React.ReactNode }) {
 
 function Footer() {
   const { lang } = useLanguage();
-  const [expanded, setExpanded] = useState(false);
+  const ln = useLN();
 
   return (
     <footer className="footer">
       <hr className="footer-hr" />
       <div className="footer-inner">
-        <button className="footer-toggle" onClick={() => setExpanded(!expanded)}>
+        <button className="footer-link" onClick={() => ln('/about')}>
           {UI.aboutUs[lang]}
-          <span className={`footer-arrow ${expanded ? 'open' : ''}`}>▸</span>
+          <span className="footer-arrow">▸</span>
         </button>
-        {expanded && (
-          <div className="footer-content">
-            <p className="footer-text">{UI.aboutDesc[lang]}</p>
-            <p className="footer-text">{UI.aboutDesc2[lang]}</p>
-            <p className="footer-text">{UI.aboutDesc3[lang]}</p>
-            <h4 className="footer-strength-title">{UI.aboutStrengthTitle[lang]}</h4>
-            <ul className="footer-strength-list">
-              {STRENGTHS[lang].map((s, i) => (
-                <li key={i} className="footer-strength-item">{s}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <p className="footer-copy">{UI.emptyTitle[lang]} &copy; {new Date().getFullYear()}</p>
       </div>
     </footer>
   );
@@ -123,6 +113,7 @@ function AppInner() {
             <Route path="/:lang/detail/:supplierId" element={<LangGate><DetailPage /></LangGate>} />
             <Route path="/:lang/oems" element={<LangGate><OemListPage /></LangGate>} />
             <Route path="/:lang/oem/:oemId" element={<LangGate><OemDetailPage /></LangGate>} />
+            <Route path="/:lang/about" element={<LangGate><AboutPage /></LangGate>} />
             <Route path="/" element={<Navigate to="/zh/" replace />} />
             <Route path="*" element={<Navigate to="/zh/" replace />} />
           </Routes>
