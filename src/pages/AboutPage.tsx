@@ -27,6 +27,16 @@ export default function AboutPage() {
         </ul>
       </section>
 
+      <section className="about-section">
+        <h3 className="about-subtitle">{UI.aboutUpdateTitle[lang]}</h3>
+        <p className="about-text">{UI.aboutUpdate[lang]}</p>
+      </section>
+
+      <section className="about-section">
+        <h3 className="about-subtitle">{UI.aboutDisclaimerTitle[lang]}</h3>
+        <p className="about-text">{UI.aboutDisclaimer[lang]}</p>
+      </section>
+
       <div className="about-back">
         <button className="about-back-btn" onClick={() => ln('/')}>
           {UI.back[lang]}

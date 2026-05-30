@@ -59,6 +59,7 @@ export const UI: Record<string, LocalizedString> = {
   oemSupplierBySystem: { zh: '供应商按系统分类', en: 'Suppliers by System' },
   oemNoData: { zh: '暂无配套供应商数据', en: 'No supplier data available' },
   aboutUs: { zh: '关于我们', en: 'About Us' },
+  contactUs: { zh: '联系我们', en: 'Contact Us' },
   aboutDesc: {
     zh: '我们是一支深耕中国风电供应链的专业团队。团队成员来自中国风电零部件制造企业的不同岗位，拥有叶片设计、齿轮箱制造、发电机系统、偏航变桨控制、塔筒制造、变流器工程等领域的多年实战经验。',
     en: 'We are a professional team deeply dedicated to the Chinese wind turbine supply chain. Our members come from diverse backgrounds across the wind energy industry, with hands-on experience in various positions at leading Chinese wind turbine component manufacturers.',
@@ -72,6 +73,16 @@ export const UI: Record<string, LocalizedString> = {
     en: 'Our mission is to bridge this expertise with global partners, delivering reliable sourcing, technical consulting, and quality-focused solutions that help drive the world’s transition to clean energy.',
   },
   aboutStrengthTitle: { zh: '我们的优势', en: 'Our Strengths' },
+  aboutUpdateTitle: { zh: '更新频率', en: 'Update Frequency' },
+  aboutUpdate: {
+    zh: '我们团队会每周更新供应商图谱的信息，确保数据时效性和准确性。',
+    en: 'Our team updates the supplier map information weekly to ensure data timeliness and accuracy.',
+  },
+  aboutDisclaimerTitle: { zh: '内容声明', en: 'Disclaimer' },
+  aboutDisclaimer: {
+    zh: '我们的供应商图谱数据均来自于公开信息以及我们对供应商的专业调研。如有供应商对其中内容存在异议，欢迎发送邮件至 info@bigwingstech.com 与我们联系，我们将及时核实并处理。',
+    en: 'Our supplier map data is sourced from public information and our professional research on suppliers. If any supplier has concerns about the content, please email us at info@bigwingstech.com. We will verify and address them promptly.',
+  },
 };
 
 export const STRENGTHS: Record<'zh' | 'en', string[]> = {

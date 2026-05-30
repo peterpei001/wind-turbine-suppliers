@@ -977,15 +977,31 @@
 
 .footer-right {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.footer-contact {
+  display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+}
+
+.footer-contact-label {
+  font-size: 11px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 .footer-email {
-  font-size: 12px;
-  color: #64748B;
+  font-size: 13px;
+  color: #94A3B8;
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
 .footer-email:hover {
   color: #60A5FA;
@@ -1206,4 +1222,15 @@
   /* ── Empty state ── */
   .content-empty h2 { font-size: 18px; }
   .content-empty-icon { font-size: 40px; }
+
+  /* ── Footer ── */
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+  }
 }
