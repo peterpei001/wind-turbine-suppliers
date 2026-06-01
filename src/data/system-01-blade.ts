@@ -9,16 +9,271 @@ export const bladeSystem: TreeNode = {
       id: 'blade-body',
       name: { zh: '叶片本体', en: 'Blade Body' },
       type: 'component',
-      supplierCount: 6,
+      supplierCount: 10,
       topSupplier: { zh: '中材科技', en: 'Sinomat' },
-      cr3: '~58%',
+      cr3: '~66%',
       suppliers: [
-        { id: 's1', name: { zh: '中材科技', en: 'Sinomat' }, rank: 1, marketShare: '~30%', annualShipment: { zh: '2024年24GW', en: '2024 24GW' }, keyParams: { zh: '玻纤/碳纤主梁,最长120m+', en: 'Fiberglass/Carbon fiber spar cap, up to 120m+' }, customers: [{ zh: '金风科技', en: 'Goldwind' }, { zh: '远景能源', en: 'Envision Energy' }, { zh: '明阳智能', en: 'Mingyang Smart Energy' }, { zh: '运达股份', en: 'Windey' }], headquarters: { zh: '北京/甘肃', en: 'Beijing/Gansu' }, tier: { zh: '国产高端', en: 'China High-end' }, techHighlights: [{ zh: '碳纤主梁工艺', en: 'Carbon fiber spar cap process' }, { zh: '超百米叶片', en: 'Blades exceeding 100m' }, { zh: '16MW漂浮式122米叶片', en: '16MW floating 122m blade' }], description: { zh: '全球风电叶片龙头,连续13年市占率第一,2024年叶片营收125.95亿元,销量24GW,布局巴西/乌兹别克斯坦海外基地', en: 'Global blade leader #1 for 13 consecutive years, 2024 blade revenue ¥12.6B, 24GW sales, overseas bases in Brazil/Uzbekistan' }, contact: { website: 'www.sinomat.com', person: { zh: '张经理', en: 'Manager Zhang' }, phone: '0931-xxxxxxx', email: 'info@sinomat.com' }, established: { zh: '2001年', en: '2001' }, employees: '5000+', mainProducts: [{ zh: '风电叶片', en: 'Wind turbine blades' }, { zh: '复合材料制品', en: 'Composite material products' }, { zh: '玻璃纤维制品', en: 'Fiberglass products' }] },
-        { id: 's2', name: { zh: '时代新材', en: 'Times New Material (TMT)' }, rank: 2, marketShare: '~24%', annualShipment: { zh: '2024年营收102.69亿元', en: '2024 revenue ¥10.3B' }, keyParams: { zh: '玻纤/碳纤,最长110m', en: 'Fiberglass/Carbon fiber, up to 110m' }, customers: [{ zh: '远景能源', en: 'Envision Energy' }, { zh: '三一重能', en: 'Sany Renewable Energy' }, { zh: '中车风电', en: 'CRRC Wind Power' }], headquarters: { zh: '株洲', en: 'Zhuzhou' }, tier: { zh: '国产高端', en: 'China High-end' }, techHighlights: [{ zh: '碳纤拉挤主梁', en: 'Carbon fiber pultruded spar cap' }, { zh: '可回收叶片TMT82', en: 'Recyclable blade TMT82' }, { zh: '聚氨酯树脂规模化', en: 'Large-scale polyurethane resin' }], description: { zh: '国内风电叶片第二,2025年叶片营收首破百亿达102.69亿元,国内市占率约24%,布局越南/塞尔维亚海外基地', en: '#2 in China wind blades, first time exceeding ¥10B revenue, ~24% domestic share, expanding to Vietnam/Serbia' }, contact: { website: 'www.trp.com.cn' } },
-        { id: 's3', name: { zh: '中复连众', en: 'Zhongfu Lianzhong' }, rank: 3, marketShare: '~15%', annualShipment: { zh: '1800+ 支', en: '1800+ units' }, keyParams: { zh: '玻纤为主,最长100m', en: 'Primarily fiberglass, up to 100m' }, customers: [{ zh: '金风科技', en: 'Goldwind' }, { zh: '国电联合', en: 'Guodian United Power' }], headquarters: { zh: '连云港', en: 'Lianyungang' }, tier: { zh: '国产高端', en: 'China High-end' }, techHighlights: [{ zh: '玻纤叶片成本优势', en: 'Cost advantage in fiberglass blades' }], description: { zh: '2023年被中材科技收购,现为中材叶片全资子公司,玻纤叶片性价比突出', en: 'Acquired by Sinomat in 2023, now a wholly-owned subsidiary under Sinomat Blade, cost-effective fiberglass blades' }, contact: { website: 'www.lzfrp.com' } },
-        { id: 's4', name: { zh: '艾朗科技', en: 'Ailang Technology' }, rank: 4, marketShare: '~8%', annualShipment: { zh: '800+ 支', en: '800+ units' }, keyParams: { zh: '民企,性价比路线', en: 'Private enterprise, cost-effective strategy' }, customers: [{ zh: '运达股份', en: 'Windey' }, { zh: '三一重能', en: 'Sany Renewable Energy' }], headquarters: { zh: '无锡', en: 'Wuxi' }, tier: { zh: '国产性价比', en: 'China Cost-effective' }, techHighlights: [{ zh: '快速交付', en: 'Fast delivery' }, { zh: '灵活定制', en: 'Flexible customization' }], description: { zh: '民营叶片企业，以快速响应和性价比取胜', en: 'Private blade manufacturer known for fast response and cost-effectiveness' }, contact: { website: 'www.ailangtech.com' } },
-        { id: 's5', name: 'LM Wind Power', rank: 5, marketShare: '~10%', annualShipment: '—', keyParams: { zh: '全球龙头,最长108m', en: 'Global leader, up to 108m' }, customers: ['GE', 'SGRE'], headquarters: { zh: '丹麦/全球', en: 'Denmark/Global' }, tier: { zh: '国际一线', en: 'International Top-tier' }, techHighlights: [{ zh: '全球叶片技术领先', en: 'Global technology leadership in blades' }, { zh: '自动铺层工艺', en: 'Automated layup process' }], description: { zh: 'GE旗下全球叶片龙头，技术储备深厚', en: 'GE-owned global blade leader with deep technology portfolio' }, contact: { website: 'www.lmwindpower.com' } },
-        { id: 's6', name: { zh: '西门子歌美飒叶片', en: 'Siemens Gamesa Blades' }, rank: 6, marketShare: '~8%', annualShipment: '—', keyParams: { zh: '自用为主', en: 'Primarily in-house use' }, customers: ['Siemens Gamesa'], headquarters: { zh: '丹麦/西班牙', en: 'Denmark/Spain' }, tier: { zh: '国际一线', en: 'International Top-tier' }, techHighlights: [{ zh: '叶片-整机一体化设计', en: 'Integrated blade-turbine design' }], description: { zh: 'SGRE自研自产叶片', en: 'SGRE self-developed and manufactured blades' }, contact: { website: 'www.siemensgamesa.com' } },
+        {
+          id: 's1',
+          name: { zh: '中材科技风电叶片股份有限公司（中材叶片）', en: 'Sinomat Science & Technology (Sinomat Blade)' },
+          rank: 1,
+          marketShare: '~30%',
+          annualShipment: { zh: '产能60GW+', en: '60GW+ capacity' },
+          keyParams: { zh: '百米级海上大兆瓦叶片，最长122m', en: '100m+ offshore mega-watt blades, up to 122m' },
+          customers: [
+            { zh: '金风科技', en: 'Goldwind' },
+            { zh: '远景能源', en: 'Envision Energy' },
+            { zh: '明阳智能', en: 'Mingyang Smart Energy' },
+            { zh: '运达股份', en: 'Windey' }
+          ],
+          headquarters: { zh: '北京市延庆区', en: 'Beijing Yanqing' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '独家配套金风科技16-18MW海上机组', en: 'Exclusive supplier for Goldwind 16-18MW offshore turbines' },
+            { zh: '抗沙尘高耐腐蚀叶片技术领先', en: 'Leading sand-resistant and corrosion-resistant blade tech' },
+            { zh: '全产业链研发，客户覆盖全球26国', en: 'Full supply chain R&D, serving 26 countries globally' }
+          ],
+          description: {
+            zh: '央企背景（中国建材集团），连续14年国内市占率第一（28%~31%）；主打百米级海上大兆瓦叶片，独家配套金风科技16~18MW海上机组；全产业链研发，抗沙尘、高耐腐蚀叶片技术领先，客户覆盖全球26个国家',
+            en: 'State-owned (CNBM Group), #1 domestic market share for 14 consecutive years (28-31%); specializes in 100m+ offshore mega-watt blades, exclusive supplier for Goldwind 16-18MW offshore turbines; full supply chain R&D, advanced sand-resistant and corrosion-resistant blade technology, serving 26 countries globally'
+          },
+          contact: {
+            website: 'yp.sinomatech.com',
+            person: { zh: '徐俊（董事长）、王欣', en: 'Xu Jun (Chairman), Wang Xin' },
+            phone: '010-84097712',
+            email: 'bladeoffice@sinomatech.com'
+          }
+        },
+        {
+          id: 's2',
+          name: { zh: '株洲时代新材料科技股份有限公司（时代新材）', en: 'Zhuzhou Times New Material Technology (TMT)' },
+          rank: 2,
+          marketShare: '~24%',
+          annualShipment: { zh: '产能35GW+', en: '35GW+ capacity' },
+          keyParams: { zh: '玻纤/碳纤，最长110m', en: 'Fiberglass/Carbon fiber, up to 110m' },
+          customers: [
+            { zh: '远景能源', en: 'Envision Energy' },
+            { zh: '三一重能', en: 'Sany Renewable Energy' },
+            { zh: '中车风电', en: 'CRRC Wind Power' }
+          ],
+          headquarters: { zh: '湖南省株洲市', en: 'Zhuzhou, Hunan' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '中车集团旗下央企，高分子复合材料技术雄厚', en: 'CRRC subsidiary with strong polymer composite technology' },
+            { zh: '风电叶片+减振材料双主业', en: 'Dual main business: wind blades + vibration damping materials' },
+            { zh: '陆上6-10MW、海上10-16MW叶片', en: 'Onshore 6-10MW and offshore 10-16MW blades' }
+          ],
+          description: {
+            zh: '中车集团旗下央企，高分子复合材料技术实力雄厚；风电叶片+减振材料双主业；陆上6~10MW、海上10~16MW叶片出货量领先',
+            en: 'CRRC state-owned subsidiary with strong polymer composite technology; dual main business of wind blades and vibration damping materials; leading shipments of onshore 6-10MW and offshore 10-16MW blades'
+          },
+          contact: {
+            website: 'www.crrcgc.cc/sdxc',
+            person: { zh: '彭华文（法定代表人）', en: 'Peng Huawen (Legal Representative)' }
+          }
+        },
+        {
+          id: 's4',
+          name: { zh: '艾郎科技股份有限公司（艾郎风电）', en: 'Aeolon Technology (Aeolon Wind Power)' },
+          rank: 3,
+          marketShare: '~12.4%',
+          annualShipment: { zh: '产能25GW+', en: '25GW+ capacity' },
+          keyParams: { zh: '叶片轻量化、碳纤维应用，最长117.8m', en: 'Lightweight blades, carbon fiber application, up to 117.8m' },
+          customers: [
+            { zh: '运达股份', en: 'Windey' },
+            { zh: '三一重能', en: 'Sany Renewable Energy' }
+          ],
+          headquarters: { zh: '上海市浦东新区临港新片区', en: 'Shanghai Pudong Lingang' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '叶片轻量化、碳纤维应用领域领先', en: 'Leading in blade lightweighting and carbon fiber applications' },
+            { zh: '可量产117.8米超长叶片', en: 'Mass production of 117.8m ultra-long blades' },
+            { zh: '摩洛哥基地为非洲最大风电叶片工厂', en: 'Morocco base is Africa\'s largest wind blade factory' }
+          ],
+          description: {
+            zh: '国内民营龙头企业，深耕叶片轻量化、碳纤维应用领域；可量产117.8米超长叶片，产品出口欧洲、北非、东南亚；摩洛哥基地为非洲最大风电叶片工厂',
+            en: 'Leading domestic private enterprise, specializing in blade lightweighting and carbon fiber applications; mass produces 117.8m ultra-long blades, exports to Europe, North Africa, Southeast Asia; Morocco facility is Africa\'s largest wind blade factory'
+          },
+          contact: {
+            website: 'www.aeolon.com.cn',
+            person: { zh: '李传胜、胡文龙（董事长）', en: 'Li Chuansheng, Hu Wenlong (Chairman)' },
+            phone: '021-38181111',
+            email: 'ir@aeolon.com.cn'
+          }
+        },
+        {
+          id: 's101',
+          name: { zh: '明阳智慧能源集团股份公司（明阳智能·叶片事业部）', en: 'Mingyang Smart Energy (Blade Division)' },
+          rank: 4,
+          marketShare: '~14.7%',
+          annualShipment: { zh: '产能22GW+', en: '22GW+ capacity' },
+          keyParams: { zh: '海上大兆瓦叶片，12-16MW', en: 'Offshore large MW blades, 12-16MW' },
+          customers: [
+            { zh: '明阳智能（自用为主）', en: 'Mingyang Smart Energy (primarily in-house)' }
+          ],
+          headquarters: { zh: '广东省中山市', en: 'Zhongshan, Guangdong' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '整机+叶片垂直一体化标杆企业', en: 'Vertically integrated turbine + blade benchmark' },
+            { zh: '海上风电技术全球领先', en: 'Global leader in offshore wind technology' },
+            { zh: '阳江基地为华南核心海上叶片产能基地', en: 'Yangjiang base is South China\'s core offshore blade facility' }
+          ],
+          description: {
+            zh: '整机+叶片垂直一体化标杆企业，海上风电技术全球领先；叶片优先配套自有整机，同时对外供货；主打12~16MW海上大兆瓦叶片，阳江基地为华南核心海上叶片产能基地',
+            en: 'Vertically integrated turbine and blade benchmark, globally leading offshore wind technology; blades primarily for in-house turbines while also supplying externally; specializes in 12-16MW offshore blades; Yangjiang base is South China\'s core offshore blade production facility'
+          },
+          contact: {
+            website: 'www.myse.com.cn',
+            person: { zh: '张传卫（法定代表人）', en: 'Zhang Chuanwei (Legal Representative)' },
+            phone: '0760-28186666'
+          }
+        },
+        {
+          id: 's102',
+          name: { zh: '三一重能股份有限公司（三一重能·叶片事业部）', en: 'Sany Renewable Energy (Blade Division)' },
+          rank: 5,
+          marketShare: '~9.4%',
+          annualShipment: { zh: '产能20GW+', en: '20GW+ capacity' },
+          keyParams: { zh: '陆上大兆瓦叶片', en: 'Onshore large MW blades' },
+          customers: [
+            { zh: '三一重能（自用为主）', en: 'Sany Renewable Energy (primarily in-house)' }
+          ],
+          headquarters: { zh: '北京市昌平区', en: 'Beijing Changping' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '工程机械跨界风电代表，智能制造标杆', en: 'Cross-industry wind power entrant from construction machinery, smart manufacturing benchmark' },
+            { zh: '韶山基地为亚洲最大单体叶片智能工厂', en: 'Shaoshan base is Asia\'s largest single blade smart factory' },
+            { zh: '自动化产线普及，生产效率提升20%以上', en: 'Automated production lines, 20%+ efficiency improvement' }
+          ],
+          description: {
+            zh: '工程机械跨界风电代表，智能制造标杆；韶山基地为亚洲最大单体叶片智能工厂，自动化产线普及，生产效率提升20%以上；主打陆上大兆瓦叶片',
+            en: 'Cross-industry wind power entrant from construction machinery, smart manufacturing benchmark; Shaoshan base is Asia\'s largest single blade smart factory with automated lines achieving 20%+ efficiency improvement; specializes in onshore large MW blades'
+          },
+          contact: {
+            website: 'www.sanyre.com.cn',
+            person: { zh: '周福贵（叶片板块负责人）', en: 'Zhou Fugui (Head of Blade Division)' }
+          }
+        },
+        {
+          id: 's3',
+          name: { zh: '连云港中复连众复合材料集团有限公司（中复连众）', en: 'Lianyungang Zhongfu Lianzhong Composites (LZFRP)' },
+          rank: 6,
+          marketShare: '~8GW',
+          annualShipment: { zh: '产能8GW+', en: '8GW+ capacity' },
+          keyParams: { zh: '玻纤为主，4MW及以上大型叶片', en: 'Primarily fiberglass, 4MW+ large blades' },
+          customers: [
+            { zh: '金风科技', en: 'Goldwind' },
+            { zh: '国电联合', en: 'Guodian United Power' }
+          ],
+          headquarters: { zh: '江苏省连云港市', en: 'Lianyungang, Jiangsu' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '现已并入中材科技体系（2023年收购）', en: 'Acquired by Sinomat in 2023' },
+            { zh: '紧邻港口，海运交付优势明显', en: 'Port proximity provides strong sea logistics advantage' },
+            { zh: '海上风电叶片技术积淀深厚', en: 'Deep offshore wind blade technology accumulation' }
+          ],
+          description: {
+            zh: '老牌国企，2023年被中材科技收购，现为中材叶片全资子公司；海上风电叶片技术积淀深厚；紧邻港口，海运交付优势明显；主营4MW及以上大型叶片',
+            en: 'Established state-owned enterprise, acquired by Sinomat in 2023, now a wholly-owned subsidiary; deep offshore blade technology; port proximity provides strong sea logistics advantage; specializes in 4MW+ large blades'
+          },
+          contact: {
+            website: 'www.lzfrp.com',
+            person: { zh: '南洋（法定代表人）；翟辉（叶片子公司负责人）', en: 'Nan Yang (Legal Representative); Zhai Hui (Blade Subsidiary Head)' },
+            phone: '0518-85151888',
+            email: 'hr_lyg@sinomatech.com'
+          }
+        },
+        {
+          id: 's103',
+          name: { zh: '洛阳双瑞风电叶片有限公司（双瑞风电）', en: 'Luoyang Shuangrui Wind Power Blade (Shuangrui Wind Power)' },
+          rank: 7,
+          marketShare: '~6GW',
+          annualShipment: { zh: '产能6GW+', en: '6GW+ capacity' },
+          keyParams: { zh: '百米级大叶片，低温/强腐蚀环境专用', en: '100m+ large blades, specialized for low-temp and corrosive environments' },
+          customers: [],
+          headquarters: { zh: '河南洛阳/福建厦门', en: 'Luoyang, Henan / Xiamen, Fujian' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '中船集团725所下属国企，军工技术转民用', en: 'CSSC 725 Research Institute subsidiary, military-to-civilian tech transfer' },
+            { zh: '高可靠性海上叶片', en: 'High-reliability offshore blades' },
+            { zh: '低温/强腐蚀环境专用叶片', en: 'Specialized blades for low-temp and corrosive environments' }
+          ],
+          description: {
+            zh: '中船集团725所下属国企，军工技术转民用；擅长研发制造高可靠性海上叶片、低温/强腐蚀环境专用叶片；7大基地全国布局',
+            en: 'CSSC 725 Research Institute subsidiary with military-to-civilian technology transfer; specializes in high-reliability offshore blades and low-temperature/corrosive environment blades; 7 production bases nationwide'
+          },
+          contact: {
+            website: 'www.xmsrfd.cn',
+            person: { zh: '史俊虎（厦门总部负责人）', en: 'Shi Junhu (Xiamen HQ Head)' },
+            phone: '0592-3725000',
+            email: 'srfd@725.com.cn'
+          }
+        },
+        {
+          id: 's104',
+          name: { zh: '山东双一科技股份有限公司（双一科技）', en: 'Shandong Shuangyi Technology (Shuangyi Tech)' },
+          rank: 8,
+          marketShare: '~5GW',
+          annualShipment: { zh: '产能5GW+', en: '5GW+ capacity' },
+          keyParams: { zh: '风电叶片模具全球龙头，超大型模具140m+', en: 'Global leader in blade molds, ultra-large molds 140m+' },
+          customers: [],
+          headquarters: { zh: '山东省德州市', en: 'Dezhou, Shandong' },
+          tier: { zh: '国产高端', en: 'China High-end' },
+          techHighlights: [
+            { zh: '风电叶片模具全球龙头（市占率35%）', en: 'Global leader in wind blade molds (35% market share)' },
+            { zh: '全球少数可生产140米以上超大型叶片模具', en: 'One of few globally capable of 140m+ ultra-large blade molds' },
+            { zh: '海外业务占比45%', en: 'Overseas business accounts for 45%' }
+          ],
+          description: {
+            zh: '创业板上市民企，全球少数可生产140米以上超大型叶片模具的企业；同时生产叶片、机舱罩等复合材料部件，海外业务占比45%',
+            en: 'GEM-listed private enterprise, one of few globally capable of producing 140m+ ultra-large blade molds; also produces blades, nacelle covers and other composite components; overseas business accounts for 45%'
+          },
+          contact: {
+            website: 'www.shuangyitec.com.cn',
+            person: { zh: '王庆华（法定代表人）', en: 'Wang Qinghua (Legal Representative)' },
+            phone: '0534-2421888'
+          }
+        },
+        {
+          id: 's105',
+          name: { zh: '江苏国信风力发电设备有限公司', en: 'Jiangsu Guoxin Wind Power Equipment' },
+          rank: 9,
+          marketShare: '—',
+          annualShipment: { zh: '年产800~1000支（3-8MW叶片）', en: '800-1000 units/year (3-8MW blades)' },
+          keyParams: { zh: '3-8MW陆上叶片', en: '3-8MW onshore blades' },
+          customers: [],
+          headquarters: { zh: '江苏省盐城市大丰区', en: 'Dafeng, Yancheng, Jiangsu' },
+          tier: { zh: '国产性价比', en: 'China Cost-effective' },
+          techHighlights: [
+            { zh: '华东区域配套企业', en: 'East China regional supplier' },
+            { zh: '产品性价比优势明显', en: 'Strong cost-performance advantage' }
+          ],
+          description: {
+            zh: '华东区域配套企业，专注陆上风电市场，产品性价比优势明显',
+            en: 'East China regional supplier focused on onshore wind market with strong cost-performance advantage'
+          },
+          contact: {}
+        },
+        {
+          id: 's106',
+          name: { zh: '内蒙古久泰新材料风电叶片有限公司', en: 'Inner Mongolia Jiutai New Material Wind Blade' },
+          rank: 10,
+          marketShare: '—',
+          annualShipment: { zh: '年产600支（4-10MW陆上叶片）', en: '600 units/year (4-10MW onshore blades)' },
+          keyParams: { zh: '4-10MW陆上叶片，抗风沙耐低温', en: '4-10MW onshore blades, sand-resistant and low-temperature tolerant' },
+          customers: [],
+          headquarters: { zh: '内蒙古鄂尔多斯市', en: 'Ordos, Inner Mongolia' },
+          tier: { zh: '国产性价比', en: 'China Cost-effective' },
+          techHighlights: [
+            { zh: '深耕西北风电市场', en: 'Deep roots in Northwest China wind market' },
+            { zh: '风沙、低温环境定制化叶片能力较强', en: 'Strong customization for sandstorm and low-temperature environments' }
+          ],
+          description: {
+            zh: '深耕西北风电市场，针对风沙、低温环境定制化叶片能力较强',
+            en: 'Deeply rooted in Northwest China wind market with strong customization capabilities for sandstorm and low-temperature environments'
+          },
+          contact: {}
+        }
       ]
     },
     {
