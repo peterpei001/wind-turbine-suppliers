@@ -345,14 +345,13 @@
 
 .home-card {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px;
+  flex-direction: column;
   background: linear-gradient(135deg, #1E293B 0%, #1a2235 100%);
   border: 1px solid #334155;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
+  overflow: hidden;
 }
 
 .home-card:hover {
@@ -361,22 +360,40 @@
   box-shadow: 0 6px 20px rgba(59,130,246,0.1);
 }
 
-.home-card-icon { font-size: 24px; }
+.home-card-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 12px 12px;
+  position: relative;
+}
+
+.home-card-tag::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.home-card-tag-icon { font-size: 22px; }
+
+.home-card-tag-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
 
 .home-card-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
-  min-width: 0;
-}
-
-.home-card-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #E2E8F0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 10px 12px 14px;
 }
 
 .home-card-meta {
