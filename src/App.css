@@ -1237,7 +1237,7 @@
 
   /* ── Footer ── */
   .footer {
-    padding-bottom: 76px;
+    padding-bottom: 10px;
   }
   .footer-inner {
     flex-direction: column;
